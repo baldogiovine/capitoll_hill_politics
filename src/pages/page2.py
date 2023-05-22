@@ -13,7 +13,7 @@ dname = os.path.dirname(abspath)
 dname = dname.replace("\\", "/")
 os.chdir(dname)
 
-dash.register_page(__name__, name='Page 1')
+dash.register_page(__name__, name='6th of January')
 
 # Assuming you have a DataFrame named df
 # For demonstration purposes, I'm using a sample DataFrame
@@ -61,10 +61,10 @@ layout=dbc.Container([
     # Eye-catching title
     dbc.Row([
         dbc.Col([
-            html.H1('The 5th of January: Decoding Democracy Through Twitter',
+            html.H1('The 6th of January: Decoding Democracy Through Twitter',
                     style={'textAlign': 'center', "color" : "black", 'font-weight': 'bold'}),
             html.P("""What if we told you that the heartbeat of democracy could be traced in 280 characters or less? 
-            From October 2020 to January 2021, we delved into the vibrant and volatile world of Twitter to dissect the discourse around #Trump. 
+            From October 2020 to January 2021, we delved into the vibrant and volatile world of Twitter to dissect the discourse around the infamous U.s. presidential election of 2020. 
             Welcome to a digital exploration that uncovers the unexpected and confronts the unimaginable.""",
                    style={'textAlign': 'center', "color" :"black", 'font-size': '20px'})
         ], width=12)
@@ -73,7 +73,11 @@ layout=dbc.Container([
     # Visually striking image
     dbc.Row([
         dbc.Col([
-            html.Img(src=r'assets/twitter_network.png', alt='image', style={'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'width': '80%'})
+            html.Img(src=r'assets/Poster_Unleash_def.png', alt='image', style={'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'width': '70%'}),
+            html.P("""
+                    This infographic provides a deep investigation of Twitter activity during the critical period from October 2020 to January 6, 2021. This period marked a crucial time in U.S. politics, witnessing an unprecedented level of discourse on the digital stage. The focus of our analysis is on the ego networks of Twitter, which represent intricate structures of interaction centered around influential individuals, or 'egos'. These influencers play a significant role in shaping the dialogue within their networks, thereby influencing the patterns of agreement and disagreement that were particularly noticeable during this remarkable time. 
+                    The first visualization in our study provides an insightful snapshot of these ego networks, illuminating the nature of political conversations in the online space during this crucial period. Our analysis aims to shed light on the dynamics of these discussions, thereby contributing to a broader understanding of the significant role social media plays in shaping public opinion and influencing political discourse.
+                """, style={'textAlign': 'center', "color": "black", 'font-size': '16px'})
         ], width=12)
     ], align="center"),
 

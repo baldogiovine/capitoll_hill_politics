@@ -15,7 +15,7 @@ dname = os.path.dirname(abspath)
 dname = dname.replace("\\", "/")
 os.chdir(dname)
 
-dash.register_page(__name__, name='Page 2')
+dash.register_page(__name__, name='Polarization')
 
 barplottolo = pd.read_csv('data/barplottolo.csv')
 with open('data/accademia_della_kruskal.pickle', 'rb') as pickle_file:
@@ -73,12 +73,37 @@ layout = dbc.Container([
             html.H4("Top 7 Keywords by Occurrence: The Power Players of Political Discourse",
                     style={'textAlign': 'center', 'font-weight': 'bold', 'color': 'black'}),
             dcc.Graph(id="keywords_barplot"),
-        ], width=6),
+        ], width=8),
+        dbc.Col([
+            dbc.Card([
+                dbc.CardBody([
+                    html.P("""This visualization represents the most influential keywords that shaped the Twitter discourse 
+                    during the politically charged period from October 2020 to January 6, 2021. The identified keywords played 
+                    a central role in driving conversations within the intricate ego networks of influential individuals. Understanding 
+                    the prevalence of these keywords gives us insights into the themes that were central to political dialogues during this period.""",
+                    className="card-text")
+                ])
+            ], style={'marginTop': '110px'})
+        ], width=4),
+    ], style={'marginBottom': '50px'}),
+
+    dbc.Row([
         dbc.Col([
             html.H4("Edge Betweenness Percentiles: Unveiling the Bridge Keywords",
                     style={'textAlign': 'center', 'font-weight': 'bold', 'color': 'black'}),
             dcc.Graph(id="edge_bet_percentiles_plot"),
-        ], width=6),
+        ], width=8),
+        dbc.Col([
+            dbc.Card([
+                dbc.CardBody([
+                    html.P("""This visualization helps us understand the patterns of agreement and disagreement that were prominent 
+                    during this significant period. The edge betweenness metric reveals the potential bridge keywords which have significant 
+                    influence in connecting different communities. This analysis, along with the use of the Roberta-large model and the Greedy Modularity 
+                    algorithm, helped us to better understand the dynamics of these discussions and the role of ego networks in shaping public opinion.""",
+                    className="card-text")
+                ])
+            ], style={'marginTop': '100px'})
+        ], width=4),
     ], style={'marginBottom': '50px'}),
 
     dbc.Row([
